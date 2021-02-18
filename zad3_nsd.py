@@ -29,45 +29,56 @@ def nsd(n):
     # for i in reversed(range(2, max)):
     #     if (n % i == 0) and (sympy.isprime(i)):
     #         return i
-    print(math.sqrt(n))
+    # print(math.sqrt(n))
+    # s = 2
+    # while True:
+    #     if (n % s == 0):
+    #         if (n // s == 1):
+    #             return s
+    #         n = n / s
+    #     s += 1
     s = 2
-    while True:
-        if (n % s == 0):
-            if (n // s == 1):
-                return s
-            n = n / s
+    while s * s < n:
+        while n % s == 0:
+            n = n // s
         s += 1
+    if n % s == 0:
+        n = n // s
+    return n
 
 
-#
-# class TestNsd:
-#     def test_nsd1(self):
-#         assert nsd(13195) == 29, 'error 13195'
-#
-#     def test_nsd2(self):
-#         assert nsd(600851475143) == 6857, 'error 600851475143'
-#
-#     def test_nsd3(self):
-#         assert nsd(600851475141) == 16716787, 'error 600851475141'
-#
-#     def test_nsd4(self):
-#         assert nsd(600851475143) == 6857, 'error 600851475143'
-#
-#     def test_nsd5(self):
-#         assert nsd(600851475143) == 6857, 'error 600851475143'
-#
-#     def test_nsd6(self):
-#         assert nsd(600851475143) == 6857, 'error 600851475143'
-#
-#     def test_nsd7(self):
-#         assert nsd(600851475143) == 6857, 'error 600851475143'
-#
-#     def test_nsd8(self):
-#         assert nsd(600851475143) == 6857, 'error 600851475143'
-#
-#     def test_nsd9(self):
-#         assert nsd(600851475143) == 6857, 'error 600851475143'
 
+
+class TestNsd:
+    def test_nsd1(self):
+        assert nsd(13195) == 29, 'error 13195'
+
+    def test_nsd2(self):
+        assert nsd(600851475143) == 6857, 'error 600851475143'
+
+    def test_nsd3(self):
+        assert nsd(600851475141) == 16716787, 'error 600851475141'
+
+    def test_nsd4(self):
+        assert nsd(600851475143) == 6857, 'error 600851475143'
+
+    def test_nsd5(self):
+        assert nsd(600851475143) == 6857, 'error 600851475143'
+
+    def test_nsd6(self):
+        assert nsd(600851475143) == 6857, 'error 600851475143'
+
+    def test_nsd7(self):
+        assert nsd(600851475143) == 6857, 'error 600851475143'
+
+    def test_nsd8(self):
+        assert nsd(600851475143) == 6857, 'error 600851475143'
+
+    def test_nsd9(self):
+        assert nsd(600851475143) == 6857, 'error 600851475143'
+
+print(nsd(100))
 print(nsd(600851475141))
 print(nsd(13195))
+print(nsd(22))
 print(nsd(600851475143))
