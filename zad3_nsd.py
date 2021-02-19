@@ -1,7 +1,7 @@
 """
 Каков самый большой делитель числа 600851475143, являющийся простым числом?
 """
-import sympy, math, numpy
+import sympy, math, numpy, pytest
 
 def prost(n):
     """
@@ -48,34 +48,17 @@ def nsd(n):
 
 
 
-
+@pytest.mark.parametrize('a,b', [(13195, 29), (600851475143, 6857), (600851475141, 16716787)])
 class TestNsd:
-    def test_nsd1(self):
-        assert nsd(13195) == 29, 'error 13195'
+    def test_nsd1(self, a, b):
+        assert nsd(a) == b, f'error {b}'
 
-    def test_nsd2(self):
-        assert nsd(600851475143) == 6857, 'error 600851475143'
+    # def test_nsd2(self):
+    #     assert nsd(a) == 6857, 'error 600851475143'
+    #
+    # def test_nsd3(self):
+    #     assert nsd(600851475141) == 16716787, 'error 600851475141'
 
-    def test_nsd3(self):
-        assert nsd(600851475141) == 16716787, 'error 600851475141'
-
-    def test_nsd4(self):
-        assert nsd(600851475143) == 6857, 'error 600851475143'
-
-    def test_nsd5(self):
-        assert nsd(600851475143) == 6857, 'error 600851475143'
-
-    def test_nsd6(self):
-        assert nsd(600851475143) == 6857, 'error 600851475143'
-
-    def test_nsd7(self):
-        assert nsd(600851475143) == 6857, 'error 600851475143'
-
-    def test_nsd8(self):
-        assert nsd(600851475143) == 6857, 'error 600851475143'
-
-    def test_nsd9(self):
-        assert nsd(600851475143) == 6857, 'error 600851475143'
 
 print(nsd(100))
 print(nsd(600851475141))
